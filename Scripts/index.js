@@ -3,6 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     let createUserBtn = document.querySelector(".create-user-btn");
+    let getAllUsersBtn = document.querySelector(".get-all-users-btn");
 
     createUserBtn.addEventListener("click", (event) => {
         event.preventDefault();
@@ -18,6 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("#create-password").value = ""
         document.querySelector("#create-first").value = ""
         document.querySelector("#create-last").value = ""
+    })
+
+
+
+    getAllUsersBtn.addEventListener("click", ()=>{
+        getAllUsers();
     })
 
 
@@ -65,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // ______________________________________________________________________________________
 // ______________________________________________________________________________________
 //API Access to backend
-let server = "http://localhost:3000";
+let server = "https://group-project-api.onrender.com";
 
 function createUser(username, password, first, last) {
     const data = {
@@ -98,4 +105,30 @@ function createUser(username, password, first, last) {
             console.error('Error:', error.message);
             alert(error.message);
         });
+}
+
+
+// returns an array of all users
+function getAllUsers(){
+    fetch(`${server}/api`, {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(response =>{
+        if(!response.ok){
+            return response.text().then(errorText => {
+                throw new Error("error: server responded: "+errorText);
+            })
+        }
+
+        return response.json();
+    }).then(dataJSON => {
+        let usernames = dataJSON.map(object => object.username)
+        console.log('Users Data:', dataJSON);
+        alert("User Data: " + usernames);
+    }).catch(error =>{
+        console.error("Error: ",error.message);
+        alert(error.message)
+    })
 }
