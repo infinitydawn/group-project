@@ -1,26 +1,55 @@
-// app.js
-
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
+
 const app = express();
 const port = 3000;
 
 // Middleware to parse JSON requests
 app.use(express.json());
-
-// Use CORS middleware
 app.use(cors());
 
-// Sample endpoint
-app.get('/api', (req, res) => {
-    res.json({ message: 'Hello, World!' });
+// Connect to MongoDB
+const mongoUri = 'mongodb+srv://nklnmish:mongoMN2024!@cluster0.1inkboy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+mongoose.connect(mongoUri)
+  .then(() => {
+    console.log('MongoDB connected...');
+  })
+  .catch(err => {
+    console.error('Error connecting to MongoDB:', err.message);
+    process.exit(1); // Exit the process if unable to connect
+  });
+
+// Define a sample schema and model
+const itemSchema = new mongoose.Schema({
+  name: String,
+  quantity: Number
 });
 
-app.get('/test', (req, res) => {
-    res.json({ message: 'test' });
+const Item = mongoose.model('Item', itemSchema);
+
+// Sample endpoint to get all items
+app.get('/api', async (req, res) => {
+  try {
+    const items = await Item.find();
+    res.json(items);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+// Sample endpoint to add a new item
+app.post('/api', async (req, res) => {
+  try {
+    const newItem = new Item(req.body);
+    const savedItem = await newItem.save();
+    res.json(savedItem);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
 });
 
 // Start the server
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });
