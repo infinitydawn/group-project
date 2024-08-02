@@ -10,7 +10,8 @@ app.use(express.json());
 app.use(cors());
 
 // Connect to MongoDB
-const mongoUri = 'mongodb+srv://nklnmish:mongoMN2024!@cluster0.1inkboy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+// using the users -> donors collection
+const mongoUri = '';
 mongoose.connect(mongoUri)
   .then(() => {
     console.log('MongoDB connected...');
@@ -26,7 +27,7 @@ const itemSchema = new mongoose.Schema({
   quantity: Number
 });
 
-const Item = mongoose.model('Item', itemSchema);
+const Item = mongoose.model('Item', itemSchema,"donors");
 
 // Sample endpoint to get all items
 app.get('/api', async (req, res) => {
