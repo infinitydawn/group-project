@@ -126,7 +126,7 @@ function getAllUsers(){
     }).then(dataJSON => {
         // let usernames = dataJSON.map(object => object.username)
         console.log('Users Data:', dataJSON);
-        alert("User Data: " + dataJSON);
+        alert("User Data: " + JSON.stringify(dataJSON));
     }).catch(error =>{
         console.error("Error: ",error.message);
         alert(error.message)
