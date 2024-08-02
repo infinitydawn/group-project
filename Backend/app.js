@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+let DatabaseKey = require ("./databaseLink.js");
 
 const app = express();
 const port = 3000;
@@ -13,7 +14,7 @@ app.use(cors());
 
 // Connect to MongoDB
 // using the users -> donors collection
-const mongoUri = '';
+const mongoUri = DatabaseKey.dbKey;
 mongoose.connect(mongoUri)
   .then(() => {
     console.log('MongoDB connected...');
