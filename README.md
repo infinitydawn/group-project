@@ -19,7 +19,7 @@ Our project focuses on creating a platform where restaurants can easily donate t
 
 ## Features
 
-_Restaurant Registration and Donation System_
+**Restaurant Registration and Donation System:**
 
 Restaurants can sign up and register their excess food.
 Detailed forms for restaurants to specify the type and quantity of food available for donation.
@@ -32,7 +32,7 @@ Monetary donation form for one-time or monthly donations.
 
 • Easy scheduling for receiving food donations.
 
-**Database Management**
+**Database Management:**
 
 • Secure and efficient database to manage donor and recipient information.
 
