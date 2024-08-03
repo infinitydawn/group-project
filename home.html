@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Donation Network</title>
     <link rel="stylesheet" href="style/styles.css">
 </head>
+
 <body>
     <header>
-          <h1>Food Donation Network</h1>
+        <h1>Food Donation Network</h1>
         <nav>
             <ul>
                 <li><a href="home.html">Home</a></li>
@@ -29,23 +31,41 @@
                 <input type="text" placeholder="first name" id="create-first">
                 <input type="text" placeholder="last name" id="create-last">
             </div>
+            <div>---</div>
             <div>
                 <button class="get-all-users-btn">Get All Users</button>
             </div>
+            <hr>
+            <div>
+                <button class="create-appointment-btn">Create An Appointment</button>
+                <input type="text" placeholder="username" id="create-appointment-user">
+                <input type="datetime-local" placeholder="" id="create-appointment-date">
+                <input type="text" placeholder="Description" id="create-appointment-description">
+            </div>
+            <div>---</div>
+            <div>
+                <input type="text" placeholder="username" id="get-appointment-user">
+                <button class="get-all-appointments-btn">Get All Appointments for a user</button>
+            </div>
+            <hr>
             
+
             <p>On this website restaurants can give away their surplus foods to non-profit organanizations</p>
             <p>There are two portals, one for restaurants, and one for the non-profits</p>
-            <p>Restaurants will create a ticket on the event page, and the manager for non-profit will select what they want to pick up on a first come first serve basis </p>
+            <p>Restaurants will create a ticket on the event page, and the manager for non-profit will select what they
+                want to pick up on a first come first serve basis </p>
 
 
-            
-            <li><a href="login.html"> <h1>login/Sign Up</h1> </a></li>
+
+            <li><a href="login.html">
+                    <h1>login/Sign Up</h1>
+                </a></li>
 
         </section>
 
-           
 
-    </div>
+
+        </div>
 
 
     </main>
@@ -56,4 +76,5 @@
     <script src="Scripts/index.js"></script>
     <!-- <script src="Scripts/fetchHelper.js"></script> -->
 </body>
+
 </html>

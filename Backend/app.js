@@ -22,13 +22,13 @@ mongoose.connect(mongoUri)
     process.exit(1); // Exit the process if unable to connect
   });
 
-// Define a sample schema and model
+
+//------------- SCHEMAS ---------------
+// sample schema
 const itemSchema = new mongoose.Schema({
   name: String,
   quantity: Number
 });
-
-const Item = mongoose.model('Item', itemSchema, "donors");
 
 //user schema
 const userSchema = new mongoose.Schema({
@@ -38,10 +38,31 @@ const userSchema = new mongoose.Schema({
   last: String
 });
 
+//appointment schema
+const appointmentSchema = new mongoose.Schema({
+  user: String,
+  date: Date,
+  description: String
+});
+
+
+//------------- MODELS ---------------
+// user model
 const User = mongoose.model("User", userSchema, "donors");
+// appointment model
+const Appointment = mongoose.model("Appointment", appointmentSchema, "appointments");
+// sample model
+const Item = mongoose.model('Item', itemSchema, "donors");
 
 
-// Sample endpoint to get all items
+
+
+
+//------------- API ENDPOINTS ---------------
+
+
+// ****** USERS ********
+// endpoint to get all users
 app.get('/api', async (req, res) => {
   try {
     const users = await User.find();
@@ -72,6 +93,34 @@ app.post('/api', async (req, res) => {
   }
 });
 
+
+// ****** APPOINTMENTS ********
+// endpoint to create a new appointment
+app.post('/create-appointment', async (req, res) => {
+  try {
+    const newAppointment = new Appointment(req.body);
+    const savedAppointment = await newAppointment.save();
+    res.json(savedAppointment);
+
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+// endpoint to get all appointments for a user
+app.get('/get-appointments', async (req, res) => {
+  try {
+    const username = req.query.username;
+    const appointments = await Appointment.find({ user: username });
+    res.json(appointments);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+
+
+//------------- SERVER START ---------------
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
