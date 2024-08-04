@@ -6,41 +6,41 @@
     <title>Food Donation Network</title>
     <link rel="stylesheet" href="style/forms.css">
     <header>
-        <h1>TableToTable</h1>
-      <nav>
-          <ul>
-              <li><a href="home.html">Home</a></li>
-              <li><a href="money_donation_form.html">Donate</a></li>
-              <li><a href="events.html">Events</a></li>
-              <li><a href="booking.html">Restaurant Login</a></li>
-              <li><a href="booking.html">Non-Profit Login</a></li>
-          </ul>
-      </nav>
-  </header>
-</head>  
-    <body>
-        <div class = "container">   
-            <h1>
-                Donate to TableToTable
-            </h1>
-        <div class = "Description">
-            At TableToTable, we appreciate any kind of monetary donations you can spare. 
-            These donations will go towards helping us redistribute food to our communities. 
+          <h1>TableToTable</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="money_donation_form.html">Donate</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="booking.html">Restaurant Login</a></li>
+                <li><a href="booking.html">Non-Profit Login</a></li>
+            </ul>
+        </nav>
+    </header>
+</head>
+<main>
+    <div class = "container">   
+        <h1>
+            Donate to TableToTable
+        </h1>
+    <div class = "Description">
+        At TableToTable, we appreciate any kind of monetary donations you can spare. 
+        These donations will go towards helping us redistribute food to our communities. 
+    </div>
+    <form action = "/donate-money-form" method = "post">    
+        <div class = "input-box">
+            <input type = "text" placeholder="Enter your first name">
         </div>
-        <form action = "/donate-money-form" method = "post">    
-            <div class = "input-box">
-                <input type = "text" placeholder="Enter your first name">
-            </div>
-            <div class = "input-box">
-                <input type = "text" placeholder="Enter your last name">
-            </div>
-            <div class = "input-box">
-                <input type = "text" placeholder="Enter your email">
-            </div>
-            <div>
-                <input type = "button" value = "Donate">
-            </div>
+        <div class = "input-box">
+            <input type = "text" placeholder="Enter your last name">
         </div>
-        </form>
-    </body>
+        <div class = "input-box">
+            <input type = "text" placeholder="Enter your email">
+        </div>
+        <div>
+            <input type = "button" value = "Donate">
+        </div>
+    </div>
+    </form>
+</main>
 </html> 
