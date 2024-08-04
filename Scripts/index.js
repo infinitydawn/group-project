@@ -2,26 +2,10 @@
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    let createUserBtn = document.querySelector(".create-user-btn");
     let getAllUsersBtn = document.querySelector(".get-all-users-btn");
     let createAppointmentBtn = document.querySelector(".create-appointment-btn");
     let getAllAppointmentsBtn = document.querySelector(".get-all-appointments-btn");
 
-    createUserBtn.addEventListener("click", (event) => {
-        event.preventDefault();
-        let username = document.querySelector("#create-username").value;
-        let password = document.querySelector("#create-password").value;
-        let first = document.querySelector("#create-first").value;
-        let last = document.querySelector("#create-last").value;
-
-        //this function create a new user in the database
-        createUser(username, password, first, last)
-
-        document.querySelector("#create-username").value = ""
-        document.querySelector("#create-password").value = ""
-        document.querySelector("#create-first").value = ""
-        document.querySelector("#create-last").value = ""
-    })
 
     createAppointmentBtn.addEventListener("click", (event) => {
         event.preventDefault();

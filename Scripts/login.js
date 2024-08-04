@@ -1,17 +1,54 @@
-const loginForm=document.querySelector("#login");
-const createAccount=document.querySelector("#createAccount"); /*from id from login.html*/
+//wait till page is loaded fully
+document.addEventListener("DOMContentLoaded", ()=>{
 
-document.querySelector("#linkCreateAccount").addEventListener("click", e =>{
-    e.preventDefault();
-    loginForm.classList.add("form-hidden");
-    createAccountform.classList.remove("form-hidden");
+    //stop refreshing the page upon submission
+    // document.querySelector("#createAccount").addEventListener("submit", (event)=>{
+    //     event.preventDefault();
+    // })
 
-})
-document.querySelector("#linkLogin").addEventListener("click", e =>{
-    loginForm.classList.remove("form-hidden");
-    createAccountform.classList.add("form-hidden");
+    // const loginForm=document.querySelector("#login");
+    // const createAccount=document.querySelector("#createAccount"); /*from id from login.html*/
     
+
+    //sign up form code starts here
+    let signupBtn = document.querySelector(".button-signup")
+
+    // wait untill sign up button is clicked
+    signupBtn.addEventListener("click", (event) =>{
+        // stop page reload upon click to actually see server's response
+        event.preventDefault()
+
+        // find all fields on page
+        let email = document.querySelector(".input-email-signup")
+        let password = document.querySelector(".input-password-signup")
+        let firstName = document.querySelector(".input-first-signup")
+        let lastName = document.querySelector(".input-last-signup")
+
+
+        // make an api call to database to create a new user
+        createUser(email.value, password.value, firstName.value, lastName.value);
+
+        // clear all field
+        email.value = ""
+        password.value = ""
+        firstName.value = ""
+        lastName.value = ""
+
+    })
+
+
+    document.querySelector(".button-test").addEventListener("click",()=>{
+        getAllUsers()
+    })
+
+
+
+
+
 })
+
+
+
 
 
 
