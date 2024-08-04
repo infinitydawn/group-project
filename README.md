@@ -4,11 +4,11 @@ Our project entails our nonprofit organization, TableToTable, which is dedicated
 
 ## Team Members
 
-Siegfried ~ Front End Developer
+Siegfried ~ PM & Front End
 
-Mike ~ Front End Developer
+Mike ~ Front End
 
-Mikhail ~ Database Developer
+Mikhail ~ Database
 
 Anthony ~ Team Member
 
