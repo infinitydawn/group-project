@@ -1,11 +1,8 @@
-
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -15,8 +12,8 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    /* background-color: #333; */
-    color: white;
+    background-color: #fffef0;
+    color: black;
     padding: 10px 0;
     text-align: center;
     z-index: 1000;
@@ -55,7 +52,7 @@ body {
     width: 100%;
     background: #c8fac8;
     display:flex;
-    align-items: center;
+    margin-left: 0px;
     justify-content: center;
 }
 
@@ -65,7 +62,8 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 1000px;
+    height: 500px;
     background:#fffef0;
     border-radius: 6px;
     box-shadow: 0 5px 10px;
@@ -74,3 +72,20 @@ body {
 .container .content {
     display:flex;
 }
+
+.input-box {
+    height: 50px;
+    width: 100px;
+    margin: 12px 0;
+}
+
+.input-box input, .input-box textarea{
+    font-size: 16px;
+    height: 50px;
+    width: 300px;
+    border: none;
+    background: #f0f1f8;
+    margin-left: 10px;
+}
+
+
