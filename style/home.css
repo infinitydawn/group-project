@@ -100,6 +100,35 @@ section button:hover {
     transform: scale(1.05);
 }
 
+
+
+.story-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.story-item:nth-child(4n-1) {
+    flex-direction: row-reverse;
+}
+
+.story-item img{
+    width:auto;
+    height:auto;
+
+    max-width: 40%;
+    max-height: 30%;
+}
+
+.story-item p{
+    width:auto;
+    height:auto;
+
+    max-width: 50%;
+    /* max-height: 100px; */
+}
+
 section input {
     font-size: 16px;
     padding: 10px;
