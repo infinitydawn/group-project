@@ -42,7 +42,7 @@ Monetary donation form for one-time or monthly donations.
 
 Front End: HTML, CSS, JavaScript
 
-Back End: Node.js
+Back End: Node.js, Express, Mongoose, Coors
 
 Database: MongoDB
 
