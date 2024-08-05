@@ -3,23 +3,23 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     let getAllUsersBtn = document.querySelector(".get-all-users-btn");
-    let createAppointmentBtn = document.querySelector(".create-appointment-btn");
-    let getAllAppointmentsBtn = document.querySelector(".get-all-appointments-btn");
+    // let createAppointmentBtn = document.querySelector(".create-appointment-btn");
+    // let getAllAppointmentsBtn = document.querySelector(".get-all-appointments-btn");
 
 
-    createAppointmentBtn.addEventListener("click", (event) => {
-        event.preventDefault();
-        let username = document.querySelector("#create-appointment-user").value;
-        let date = document.querySelector("#create-appointment-date").value;
-        let description = document.querySelector("#create-appointment-description").value;
+    // createAppointmentBtn.addEventListener("click", (event) => {
+    //     event.preventDefault();
+    //     let username = document.querySelector("#create-appointment-user").value;
+    //     let date = document.querySelector("#create-appointment-date").value;
+    //     let description = document.querySelector("#create-appointment-description").value;
         
-        //this function create a new appointments in the database
-        createAppointment(username, date, description)
+    //     //this function create a new appointments in the database
+    //     createAppointment(username, date, description)
 
-        document.querySelector("#create-appointment-user").value = ""
-        document.querySelector("#create-appointment-date").value = ""
-        document.querySelector("#create-appointment-description").value = ""
-    })
+    //     document.querySelector("#create-appointment-user").value = ""
+    //     document.querySelector("#create-appointment-date").value = ""
+    //     document.querySelector("#create-appointment-description").value = ""
+    // })
     
 
 
@@ -29,12 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
 
-    getAllAppointmentsBtn.addEventListener("click", (event)=>{
-        event.preventDefault()
-        let username = document.querySelector("#get-appointment-user").value;
-        getAllAppointments(username);
-        document.querySelector("#get-appointment-user").value = ""
-    })
+    // getAllAppointmentsBtn.addEventListener("click", (event)=>{
+    //     event.preventDefault()
+    //     let username = document.querySelector("#get-appointment-user").value;
+    //     getAllAppointments(username);
+    //     document.querySelector("#get-appointment-user").value = ""
+    // })
 
 
     // const loginForm = document.querySelector("#login");

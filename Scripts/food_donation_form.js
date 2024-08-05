@@ -1,37 +1,47 @@
+// import {createUser} from "fetchHelper.js"
+
+
 document.addEventListener("DOMContentLoaded", () => {
-    let getAllAppointmentsBtn = document.querySelector(".get-all-appointments-btn");
+    let createAppointmentBtn = document.querySelector(".create-appointment-btn");
 
 
-    getAllAppointmentsBtn.addEventListener("click", (event) => {
-        event.preventDefault()
-        let username = document.querySelector("#get-appointment-user").value;
-        let appointmentTime = document.querySelector(".appointment-time");
-        let appointmentDesc = document.querySelector(".appointment-desc");
-        let appointmentID = document.querySelector(".appointment-id");
-        let container = document.querySelector(".appointments-container");
+    createAppointmentBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        let username = document.querySelector("#create-appointment-user").value;
+        let date = document.querySelector("#create-appointment-date").value;
+        let description = document.querySelector("#create-appointment-description").value;
+        
+        //this function create a new appointments in the database
+        createAppointment(username, date, description)
 
-        getAllAppointments(username).then(apptData => {
-            document.querySelector("#get-appointment-user").value = ""
-
-            let htmlVal = ""
-
-            apptData.forEach(element => {
-                htmlVal += `<div class="appointments-item">
-                <div class="row"><div>Appointment #: </div><p class="appointment-id">${element._id}</p></div>
-                <div class="row"><div>DATE: </div><p class="appointment-time">${element.date}</p></div>
-                <div class="row"><div>INFO: </div><p class="appointment-desc">${element.description}</p></div>
-            </div>`
-            });
-
-            // appointmentTime.value = apptData[0].date;
-
-            container.innerHTML = htmlVal;
-
-            console.log("appoitnmetnns data new: " + JSON.stringify(apptData))
-        });
+        document.querySelector("#create-appointment-user").value = ""
+        document.querySelector("#create-appointment-date").value = ""
+        document.querySelector("#create-appointment-description").value = ""
     })
-
+    
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -113,16 +123,16 @@ function createAppointment(username, date, description) {
 
 
 // returns an array of all appointments for a user
-function getAllAppointments(username) {
-    return fetch(`${server}/get-appointments?username=${username}`, {
+function getAllAppointments(username){
+    fetch(`${server}/get-appointments?username=${username}`, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json'
         }
-    }).then(response => {
-        if (!response.ok) {
+    }).then(response =>{
+        if(!response.ok){
             return response.text().then(errorText => {
-                throw new Error("error: server responded: " + errorText);
+                throw new Error("error: server responded: "+errorText);
             })
         }
 
@@ -131,9 +141,8 @@ function getAllAppointments(username) {
         // let usernames = dataJSON.map(object => object.username)
         console.log('Appointments Data:', dataJSON);
         alert("Appointments Data: " + JSON.stringify(dataJSON));
-        return dataJSON;
-    }).catch(error => {
-        console.error("Error: ", error.message);
+    }).catch(error =>{
+        console.error("Error: ",error.message);
         alert(error.message)
     })
 }
@@ -142,16 +151,16 @@ function getAllAppointments(username) {
 
 
 // returns an array of all users
-function getAllUsers() {
+function getAllUsers(){
     fetch(`${server}/api`, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json'
         }
-    }).then(response => {
-        if (!response.ok) {
+    }).then(response =>{
+        if(!response.ok){
             return response.text().then(errorText => {
-                throw new Error("error: server responded: " + errorText);
+                throw new Error("error: server responded: "+errorText);
             })
         }
 
@@ -160,8 +169,8 @@ function getAllUsers() {
         // let usernames = dataJSON.map(object => object.username)
         console.log('Users Data:', dataJSON);
         alert("User Data: " + JSON.stringify(dataJSON));
-    }).catch(error => {
-        console.error("Error: ", error.message);
+    }).catch(error =>{
+        console.error("Error: ",error.message);
         alert(error.message)
     })
 }

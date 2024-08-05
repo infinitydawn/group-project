@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Donation Network</title>
-    <link rel="stylesheet" href="style/events.css">
+    <link rel="stylesheet" href="style/home.css">
 </head>
 
 <body>
@@ -24,24 +24,35 @@
     <main>
 
         <section>
-            <h2>Your Appointments</h2>
-            <p>On this page you can check the date and time of all your pick ups</p>
-            <hr>
-            <div class="row-input">
-                <input type="text" placeholder="username" id="get-appointment-user">
-                <button class="get-all-appointments-btn">Get All Appointments for a user</button>
+            <h2>Donate Food</h2>
+            <p>Do not let the good food go to waste, donate it for a good purpose below</p>
+            <div>
+                <button class="create-appointment-btn">Create An Appointment</button>
+                <input type="text" placeholder="username" id="create-appointment-user">
+                <input type="datetime-local" placeholder="" id="create-appointment-date">
+                <input type="text" placeholder="Description" id="create-appointment-description">
             </div>
-            <div class="appointments-container">
-                <p>Input your username above to view your scheduled appointments</p>
-            </div>
+            <div>---</div>
             <hr>
+
+
+
+
+
+
         </section>
+
+
+
+        </div>
+
+
     </main>
     <footer>
         <p>&copy; 2024 Event Booking App</p>
     </footer>
 
-    <script src="Scripts/events.js"></script>
+    <script src="Scripts/food_donation_form.js"></script>
     <!-- <script src="Scripts/fetchHelper.js"></script> -->
 </body>
 
