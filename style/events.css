@@ -135,7 +135,7 @@ section input {
     margin: 5px 0;
     border: 1px solid #cccccc;
     border-radius: 5px;
-    width: calc(100% - 22px);
+    width: 50%;
     box-sizing: border-box;
 }
 
@@ -150,4 +150,41 @@ footer {
 
 footer p {
     color: #333333;
+}
+
+.row-input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.appointments-container{
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+    margin: 5%;
+
+    border-radius: 1em;
+    
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.appointments-item{
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+    margin: 5%;
+
+    border-top:solid 3px #c0c0c0;
+
+    border-radius: 10%;
+    
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.row{
+    
+    align-items: flex-start;
+    padding: 20px
 }
