@@ -2,29 +2,29 @@ body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: #e0f7fa; 
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 header {
-    position: absolute;
     top: 0;
     width: 100%;
-    background-color: #fffef0;
-    color: black;
+    background-color: #ffffff; 
+    color: #333333; 
     padding: 10px 0;
     text-align: center;
     z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 nav {
-    color: white;
+    color: #333333; 
     text-align: center;
     padding: 0.5em 0;
 }
-
 
 nav ul {
     list-style: none;
@@ -37,60 +37,84 @@ nav ul li {
 }
 
 nav ul li a {
-    color: black;
+    color: black; 
     text-decoration: none;
+    font-weight: 500;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 20px;
-}
-
-main {
-    margin-bottom: 200px;
-    margin-left: 150px;
-}
-
-body {
-    font-family:"Poppins", sans-serif;
-    min-height: 100vh;
-    width: 100%;
-    background: #c8fac8;
-    display:flex;
-    margin-left: 0px;
-    justify-content: center;
+    color: black;
 }
 
 .description {
     margin-bottom: 20px;
     text-align: center;
+    color: #666666; 
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
-    width: 1000px;
-    height: 500px;
-    background:#fffef0;
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    background: #ffffff; 
     border-radius: 6px;
-    box-shadow: 0 5px 10px;
-}
-
-.container .content {
-    display:flex;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2em;
+    margin: 1.2em;
 }
 
 .input-box {
-    height: 50px;
-    width: 100px;
-    margin: 12px 0;
+    width: 100%;
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.input-box input, .input-box textarea{
+.input-box input {
     font-size: 16px;
     height: 50px;
-    width: 300px;
-    border: none;
-    background: #f0f1f8;
-    margin-left: 10px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #cccccc; 
+    background: #fafafa; 
+    padding: 0 10px;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+    border-radius: 4px; 
 }
 
+.input-box input:focus {
+    border-color: #00796b; 
+}
 
+.input-box input[type="button"] {
+    width: 100%;
+    max-width: 200px;
+    height: 50px;
+    background: #00796b; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-radius: 4px; 
+    transition: background 0.3s ease;
+}
+
+.input-box input[type="button"]:hover {
+    background: #004d40; 
+}
