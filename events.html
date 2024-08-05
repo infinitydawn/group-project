@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Donation Network</title>
-    <link rel="stylesheet" href="style/styles.css">
     <link rel="stylesheet" href="style/events.css">
 </head>
+
 <body>
     <header>
-          <h1>Food Donation Network</h1>
-          <nav>
+        <h1>Food Donation Network</h1>
+        <nav>
             <ul>
                 <li><a href="home.html">Home</a></li>
+                <li><a href="money_donation_form.html">Donate</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="booking.html">Restaurant Login</a></li>
                 <li><a href="booking.html">Non-Profit Login</a></li>
+
             </ul>
         </nav>
     </header>
     <main>
 
         <section>
-            <h2>New Events</h2>
-            <div class="events-container">
-                <div class="event">
-                    <h2>Event 1</h2>
-                    <p>10 Buns Of Bread</p>
-                    <p>2 burgers</p>
-                    <p>7 cokes bottles</p>
-                    <p>30 apples</p>
-                    <p>Pick it up yourself</p>
-                    <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" alt="">
-                </div>
-                <div class="event">
-                    <h2>Event 1</h2>
-                    <p>Some event info</p>
-                    <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" alt="">
-                </div>
-                <div class="event">
-                    <h2>Event 1</h2>
-                    <p>Some event info</p>
-                    <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" alt="">
-                </div>
-                <div class="event">
-                    <h2>Event 1</h2>
-                    <p>Some event info</p>
-                    <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" alt="">
-                </div>
-                
+            <h2>Events</h2>
+            <p>On this page you can check the date and time of all your pick ups</p>
+            <hr>
+            
+            
+
+            <div>---</div>
+            <div>---</div>
+            <div>---</div>
+            
+            <div>
+                <input type="text" placeholder="username" id="get-appointment-user">
+                <button class="get-all-appointments-btn">Get All Appointments for a user</button>
             </div>
+            <hr>
+
+
+
+
+
+
         </section>
-        
+
+
+
+        </div>
+
+
     </main>
     <footer>
         <p>&copy; 2024 Event Booking App</p>
     </footer>
-    <script src="scripts.js"></script>
+
+    <script src="Scripts/index.js"></script>
+    <!-- <script src="Scripts/fetchHelper.js"></script> -->
 </body>
+
 </html>
