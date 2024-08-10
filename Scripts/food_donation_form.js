@@ -49,6 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
     testApiBtn.addEventListener("click", (event) => {
 
         console.log(extractItems())
+
+        let foodInfo = extractItems();
+
+        createFoodItems(foodInfo,"123123123");
     })
 
 });
@@ -122,8 +126,8 @@ function clearForm(donationsContainer) {
 // ______________________________________________________________________________________
 // ______________________________________________________________________________________
 //API Access to backend
-let server = "https://group-project-api.onrender.com";
-// let server = "http://localhost:3000";
+// let server = "https://group-project-api.onrender.com";
+let server = "http://localhost:3000";
 
 
 // creates a new user
@@ -186,19 +190,24 @@ function createAppointment(username, date, description) {
         })
         .then(data => {
             console.log('New appointment created:', data);
+
+            let fooditems = extractItems();
+            createFoodItems(fooditems,data._id);
+
+            clearForm(document.querySelector(".donations"));
             alert("New appointment created for " + data.user + " at " + data.date)
-        }) // todo create item food connected to this appntmnt
+        })
         .catch(error => {
             console.error('Error:', error.message);
             alert(error.message);
         });
 }
 
-// todo create item food 
+// function to create a food item through an api 
 function createFoodItems(foodInfo, appointmentID) {
     let data = {
         appointmentID: appointmentID,
-        foodInfo: foodInfo
+        foodInfo: foodInfo // an array of obejcts
     }
 
     fetch(`${server}/create-food-items`, {
@@ -216,8 +225,11 @@ function createFoodItems(foodInfo, appointmentID) {
         return response.json();
     }).then(data => {
         console.log('New food item created:', data);
-        // alert("New appointment created for " + data.user + " at " + data.date)
-    })
+        //alert("New food item created for " + data.user + " at " + data.date)
+    }).catch(error => {
+        console.error('Error:', error.message);
+        alert(error.message);
+    });
 }
 
 
