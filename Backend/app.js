@@ -119,7 +119,7 @@ app.post('/create-appointment', async (req, res) => {
 
 // TODO
 // endpoint to create a new food item
-app.post('/create-food-item', async (req, res) => {
+app.post('/create-food-items', async (req, res) => {
   try {
     const newFoodItem = new FoodItem(req.body);
     const savedFoodItem = await newFoodItem.save();

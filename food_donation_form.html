@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Donation Network</title>
-    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="style/food_donation_form.css">
 </head>
 
 <body>
@@ -30,21 +30,28 @@
                 <!-- TODO -->
                 <button class="create-appointment-btn">Create An Appointment</button>
                 <input type="text" placeholder="username" id="create-appointment-user">
+
                 <input type="datetime-local" placeholder="" id="create-appointment-date">
-                <select name="food-options" id="" >
-                    <option value="n/a">Select Your Donation</option>
-                    <option value="Potato">Potato</option>
-                    <option value="Tomato">Tomato</option>
-                    <option value="Onion">Onion</option>
-                    <option value="Cucumber">Cucumber</option>
-                    <option value="Pumpkin">Pumpkin</option>
-                    <option value="Apples">Apples</option>
-                    <option value="Oranges">Oranges</option>
-                    <option value="Bananas">Bananas</option>
-                    <option value="Peaches">Peaches</option>
-                </select>
-                <!-- <input type="" placeholder="Description" id="create-appointment-description"> -->
-                <input type="number" placeholder="Qty (In Pounds)" id="create-appointment-description">
+                <div class="donations">
+                    <div class="row">
+                        <select name="food-options" id="">
+                            <option value="n/a">Select Your Donation</option>
+                            <option value="Potato">Potato</option>
+                            <option value="Tomato">Tomato</option>
+                            <option value="Onion">Onion</option>
+                            <option value="Cucumber">Cucumber</option>
+                            <option value="Pumpkin">Pumpkin</option>
+                            <option value="Apples">Apples</option>
+                            <option value="Oranges">Oranges</option>
+                            <option value="Bananas">Bananas</option>
+                            <option value="Peaches">Peaches</option>
+                        </select>
+                        <!-- <input type="" placeholder="Description" id="create-appointment-description"> -->
+                        <input type="number" placeholder="Qty (In Pounds)" id="create-appointment-description">
+                    </div>
+                </div>
+                <button id="add-food-item">Add More Items</button>
+                <button id="test-food-api">test api</button>
             </div>
             <div>---</div>
             <hr>
