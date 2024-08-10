@@ -138,6 +138,15 @@ section input {
     width: calc(100% - 22px);
     box-sizing: border-box;
 }
+section select {
+    font-size: 16px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+    box-sizing: border-box;
+}
 
 footer {
     text-align: center;

@@ -45,12 +45,21 @@ const appointmentSchema = new mongoose.Schema({
   description: String
 });
 
+//food item schema
+const foodItemSchema = new mongoose.Schema({
+  foodType: String,
+  weightPounds: Number,
+  appointmentID: String
+});
+
 
 //------------- MODELS ---------------
 // user model
 const User = mongoose.model("User", userSchema, "donors");
 // appointment model
 const Appointment = mongoose.model("Appointment", appointmentSchema, "appointments");
+// food item model
+const FoodItem = mongoose.model("FoodItem", foodItemSchema, "foodItems");
 // sample model
 const Item = mongoose.model('Item', itemSchema, "donors");
 
@@ -101,6 +110,20 @@ app.post('/create-appointment', async (req, res) => {
     const newAppointment = new Appointment(req.body);
     const savedAppointment = await newAppointment.save();
     res.json(savedAppointment);
+
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+
+// TODO
+// endpoint to create a new food item
+app.post('/create-food-item', async (req, res) => {
+  try {
+    const newFoodItem = new FoodItem(req.body);
+    const savedFoodItem = await newFoodItem.save();
+    res.json(savedFoodItem);
 
   } catch (error) {
     res.status(500).send(error.message);

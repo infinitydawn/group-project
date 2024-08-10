@@ -114,11 +114,23 @@ function createAppointment(username, date, description) {
         .then(data => {
             console.log('New appointment created:', data);
             alert("New appointment created for " + data.user + " at " + data.date)
-        })
+        }) // todo create item food connected to this appntmnt
         .catch(error => {
             console.error('Error:', error.message);
             alert(error.message);
         });
+}
+
+// todo create item food 
+function createFoodItem(foodInfo){
+    
+    fetch(`${server}/create-food-item`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
 }
 
 
