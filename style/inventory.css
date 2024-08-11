@@ -6,7 +6,7 @@ body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    background: #e0f7fa; 
+    background: #e0f7fa;
     min-height: 100vh;
     width: 100%;
     overflow-x: hidden;
@@ -15,16 +15,16 @@ body {
 header {
     top: 0;
     width: 100%;
-    background-color: #ffffff; 
-    color: #333333; 
+    background-color: #ffffff;
+    color: #333333;
     padding: 20px 0;
     text-align: center;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav {
-    color: #333333; 
+    color: #333333;
     text-align: center;
     padding: 0.5em 0;
 }
@@ -41,7 +41,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #00796b; 
+    color: #00796b;
     text-decoration: none;
     font-weight: 500;
     padding: 5px 10px;
@@ -52,7 +52,8 @@ nav ul li a:hover {
     color: #004d40;
 }
 
-h1, h2 {
+h1,
+h2 {
     text-align: center;
     color: #333333;
 }
@@ -102,7 +103,7 @@ section button:hover {
 
 
 
-.story-item{
+.story-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -113,17 +114,17 @@ section button:hover {
     flex-direction: row-reverse;
 }
 
-.story-item img{
-    width:auto;
-    height:auto;
+.story-item img {
+    width: auto;
+    height: auto;
 
     max-width: 40%;
     max-height: 30%;
 }
 
-.story-item p{
-    width:auto;
-    height:auto;
+.story-item p {
+    width: auto;
+    height: auto;
 
     max-width: 50%;
     /* max-height: 100px; */
@@ -138,6 +139,7 @@ section input {
     width: calc(100% - 22px);
     box-sizing: border-box;
 }
+
 section select {
     font-size: 16px;
     padding: 10px;
@@ -161,59 +163,91 @@ footer p {
     color: #333333;
 }
 
-/* .food-summary-table {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-.food-summary-table table{
-    border: 1px dotted black;
+th {
+    background-color: #f8f8f8;
+    color: #333;
+    font-weight: bold;
+    padding: 12px 8px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+}
+
+td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+td,
+th {
+    border-right: 1px solid #ddd;
+}
+
+td:last-child,
+th:last-child {
+    border-right: none;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Ensures the body takes the full height of the viewport */
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: #e0f7fa;
+}
+
+body {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    align-items:stretch;
-    justify-content: start
-} */
+    overflow-x: hidden;
+}
 
-/* Base Table Styles */
-table {
-    width: 100%; /* Make table width 100% of the container */
-    border-collapse: collapse; /* Ensures that borders don't double up */
-    margin-top: 20px; /* Adds some spacing above the table */
-  }
-  
-  /* Header Styles */
-  th {
-    background-color: #f8f8f8; /* Light grey background for headers */
-    color: #333; /* Dark text for contrast */
-    font-weight: bold; /* Make headers bold */
-    padding: 12px 8px; /* Add padding for better spacing */
-    text-align: left; /* Align headers to the left */
-    border-bottom: 2px solid #ddd; /* Add a subtle bottom border */
-  }
-  
-  /* Cell Styles */
-  td {
-    padding: 10px 8px; /* Add padding for better spacing */
-    border-bottom: 1px solid #eee; /* Subtle bottom border for rows */
-    text-align: left; /* Align text to the left */
-  }
-  
-  /* Alternate Row Background for Better Readability */
-  tr:nth-child(even) {
-    background-color: #f9f9f9; /* Light grey background for even rows */
-  }
-  
-  /* Add a Dividing Line Between Columns */
-  td, th {
-    border-right: 1px solid #ddd; /* Subtle vertical dividing line */
-  }
-  
-  /* Remove the Dividing Line from the Last Column */
-  td:last-child, th:last-child {
-    border-right: none;
-  }
-  
-  
+header {
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    color: #333333;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    flex: 1; /* Makes the main content take up the remaining space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #ffffff;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: auto;
+}
+
+footer p {
+    color: #333333;
+}
