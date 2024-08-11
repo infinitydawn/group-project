@@ -8,7 +8,7 @@ Siegfried ~ PM & Front End
 
 Mike ~ Front End
 
-Mikhail ~ Database
+Mikhail ~ Database, Backend, Frontend
 
 Anthony ~ Team Member
 
