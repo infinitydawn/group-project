@@ -160,3 +160,60 @@ footer {
 footer p {
     color: #333333;
 }
+
+/* .food-summary-table {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.food-summary-table table{
+    border: 1px dotted black;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items:stretch;
+    justify-content: start
+} */
+
+/* Base Table Styles */
+table {
+    width: 100%; /* Make table width 100% of the container */
+    border-collapse: collapse; /* Ensures that borders don't double up */
+    margin-top: 20px; /* Adds some spacing above the table */
+  }
+  
+  /* Header Styles */
+  th {
+    background-color: #f8f8f8; /* Light grey background for headers */
+    color: #333; /* Dark text for contrast */
+    font-weight: bold; /* Make headers bold */
+    padding: 12px 8px; /* Add padding for better spacing */
+    text-align: left; /* Align headers to the left */
+    border-bottom: 2px solid #ddd; /* Add a subtle bottom border */
+  }
+  
+  /* Cell Styles */
+  td {
+    padding: 10px 8px; /* Add padding for better spacing */
+    border-bottom: 1px solid #eee; /* Subtle bottom border for rows */
+    text-align: left; /* Align text to the left */
+  }
+  
+  /* Alternate Row Background for Better Readability */
+  tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light grey background for even rows */
+  }
+  
+  /* Add a Dividing Line Between Columns */
+  td, th {
+    border-right: 1px solid #ddd; /* Subtle vertical dividing line */
+  }
+  
+  /* Remove the Dividing Line from the Last Column */
+  td:last-child, th:last-child {
+    border-right: none;
+  }
+  
+  
