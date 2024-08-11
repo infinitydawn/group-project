@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <textarea id="apnmt-info" class="appointment-desc">${element.description}</textarea>
                     </div>
                     <div class="row items">
-                        <button onclick="getItems('${element._id}',event)" class="get-items">Get Donated Items</button>
+                        <button onclick="getItems('${element._id}',event)" class="get-items">Show Donated Items</button>
                     </div>
                 </div>`
             });
