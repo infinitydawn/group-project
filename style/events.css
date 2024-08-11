@@ -209,3 +209,14 @@ footer p {
     align-self: start;
     
 }
+
+.food-table{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+
+    /* border: 1px solid black; */
+    max-width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+}

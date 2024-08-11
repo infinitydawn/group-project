@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <textarea id="apnmt-info" class="appointment-desc">${element.description}</textarea>
                     </div>
                     <div class="row items">
-                        <button onclick="getItems('${element._id}')" class="get-items">Get Donated Items</button>
+                        <button onclick="getItems('${element._id}',event)" class="get-items">Get Donated Items</button>
                     </div>
                 </div>`
             });
@@ -56,10 +56,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-function getItems(appointmentID){
-   alert(appointmentID)
+async function getItems(appointmentID, event){
+//    alert(appointmentID)
+
+    console.log(event)
+    const clickedButton = event.target;
+
+
+   let foods = await getAllFoodItems(appointmentID);
 
    // todo - get items from api and insert in HTML instead of button (use class)
+   let htmlString = "";
+
+   foods.forEach(food => {
+    htmlString+=
+    `<div class="food-table">
+        <div>${food.foodType}: </div>
+        <div>${food.weightPounds} LBS</div>
+    </div>`
+   })
+
+   clickedButton.parentElement.innerHTML = htmlString;
+
+
+
 }
 
 
@@ -68,8 +88,8 @@ function getItems(appointmentID){
 // ______________________________________________________________________________________
 // ______________________________________________________________________________________
 //API Access to backend
-let server = "https://group-project-api.onrender.com";
-// let server = "http://localhost:3000";
+// let server = "https://group-project-api.onrender.com";
+let server = "http://localhost:3000";
 
 
 // creates a new user
@@ -144,7 +164,7 @@ function createAppointment(username, date, description) {
 // todo review if it works correctly before testing
 // returns an array of all appointments for a user
 function getAllFoodItems(appointmentID) {
-    return fetch(`${server}/get-items?appntmtID=${appointmentID}`, {
+    return fetch(`${server}/get-food-items?appntmtID=${appointmentID}`, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json'

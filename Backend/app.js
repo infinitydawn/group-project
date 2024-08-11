@@ -156,6 +156,18 @@ app.get('/get-appointments', async (req, res) => {
 });
 
 
+// endpoint to get all food items per an appointment
+app.get('/get-food-items', async (req, res) => {
+  try {
+    const appntmtID = req.query.appntmtID;
+    const foodItem = await FoodItem.find({ appointmentID: appntmtID });
+    res.json(foodItem);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+
 
 //------------- SERVER START ---------------
 // Start the server
