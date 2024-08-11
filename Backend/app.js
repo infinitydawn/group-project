@@ -116,6 +116,7 @@ app.post('/create-appointment', async (req, res) => {
   }
 });
 
+// TODO get food items for a appointment id
 
 // endpoint to create new food items
 app.post('/create-food-items', async (req, res) => {

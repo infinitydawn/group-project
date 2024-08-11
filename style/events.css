@@ -178,13 +178,34 @@ footer p {
 
     border-top:solid 3px #c0c0c0;
 
-    border-radius: 10%;
+    border-radius: 5px;
     
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .row{
     
-    align-items: flex-start;
-    padding: 20px
+    /* align-items: flex-start;
+    padding: 20px; */
+    /* border: 1px dashed gray; */
+    /* border-radius: 20px; */
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+    /* /* background: #ffffff; */
+    /* padding: 5px; */
+
+    /* align-items: center;
+    justify-content: start; */
+    
+    /* width: 95%;
+    max-width: 80%; */
+    text-align: center;
+}
+
+.row label{
+    align-self: start;
+    
 }

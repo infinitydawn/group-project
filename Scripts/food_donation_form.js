@@ -126,8 +126,8 @@ function clearForm(donationsContainer) {
 // ______________________________________________________________________________________
 // ______________________________________________________________________________________
 //API Access to backend
-// let server = "https://group-project-api.onrender.com";
-let server = "http://localhost:3000";
+let server = "https://group-project-api.onrender.com";
+// let server = "http://localhost:3000";
 
 
 // creates a new user

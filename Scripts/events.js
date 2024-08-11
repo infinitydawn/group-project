@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     let getAllAppointmentsBtn = document.querySelector(".get-all-appointments-btn");
+    let getItemsOfAppointmentsBtn = document.querySelector(".get-items");
 
 
     getAllAppointmentsBtn.addEventListener("click", (event) => {
@@ -16,12 +17,32 @@ document.addEventListener("DOMContentLoaded", () => {
             let htmlVal = ""
 
             apptData.forEach(element => {
-                htmlVal += `<div class="appointments-item">
-                <div class="row"><div>Appointment #: </div><p class="appointment-id">${element._id}</p></div>
-                <div class="row"><div>DATE: </div><p class="appointment-time">${element.date}</p></div>
-                <div class="row"><div>INFO: </div><p class="appointment-desc">${element.description}</p></div>
-            </div>`
+                let dateString = element.date;
+                let dateObj = new Date(dateString);
+                let formattedDate = dateObj.toISOString().slice(0, 16);
+
+                htmlVal += `
+                <div class="appointments-item">
+                    <div class="row">
+                        <label for="appointment-id">Appointment Number</label>
+                        <p id="appointment-id"class="appointment-id">${element._id}</p>
+                    </div>
+                    <div class="row">
+                        <label for="create-appointment-date">DATE</label>
+                        <input readonly class="row" type="datetime-local" placeholder="" id="create-appointment-date" value="${formattedDate}">
+                        </div>
+                        <div class="row">
+                        <label for="apnmt-info">Description</label>
+                        <textarea id="apnmt-info" class="appointment-desc">${element.description}</textarea>
+                    </div>
+                    <div class="row items">
+                        <button onclick="getItems('${element._id}')" class="get-items">Get Donated Items</button>
+                    </div>
+                </div>`
             });
+
+            
+            
 
             // appointmentTime.value = apptData[0].date;
 
@@ -29,9 +50,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
             console.log("appoitnmetnns data new: " + JSON.stringify(apptData))
         });
+
+        
     })
 
 });
+
+function getItems(appointmentID){
+   alert(appointmentID)
+
+   // todo - get items from api and insert in HTML instead of button (use class)
+}
 
 
 
@@ -110,6 +139,35 @@ function createAppointment(username, date, description) {
             alert(error.message);
         });
 }
+
+
+// todo review if it works correctly before testing
+// returns an array of all appointments for a user
+function getAllFoodItems(appointmentID) {
+    return fetch(`${server}/get-items?appntmtID=${appointmentID}`, {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(response => {
+        if (!response.ok) {
+            return response.text().then(errorText => {
+                throw new Error("error: server responded: " + errorText);
+            })
+        }
+
+        return response.json();
+    }).then(dataJSON => {
+        // let usernames = dataJSON.map(object => object.username)
+        console.log('Items Data:', dataJSON);
+        // alert("Items Data: " + JSON.stringify(dataJSON));
+        return dataJSON;
+    }).catch(error => {
+        console.error("Error: ", error.message);
+        alert(error.message)
+    })
+}
+
 
 
 // returns an array of all appointments for a user
