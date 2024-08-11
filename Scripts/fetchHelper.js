@@ -1,4 +1,5 @@
-let server = "http://localhost:3000";
+// let server = "http://localhost:3000";
+let server = "https://group-project-api.onrender.com";
 
 
 

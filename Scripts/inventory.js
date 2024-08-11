@@ -1,6 +1,9 @@
+let server = "https://group-project-api.onrender.com";
+// let server = "http://localhost:3000";
+
 async function getFoodTypesSummary() {
     try {
-      const response = await fetch('http://localhost:3000/get-food-types-summary');
+      const response = await fetch(`${server}/get-food-types-summary`);
       const foodSummary = await response.json();
   
       let tableHtml = `
