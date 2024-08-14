@@ -35,22 +35,11 @@
                 <input type="" placeholder="Description" id="create-appointment-description">
                 <div class="donations">
                     <div class="row">
-                        <select name="food-options" id="">
-                            <option value="n/a">Select Your Donation</option>
-                            <option value="Potato">Potato</option>
-                            <option value="Tomato">Tomato</option>
-                            <option value="Onion">Onion</option>
-                            <option value="Cucumber">Cucumber</option>
-                            <option value="Pumpkin">Pumpkin</option>
-                            <option value="Apples">Apples</option>
-                            <option value="Oranges">Oranges</option>
-                            <option value="Bananas">Bananas</option>
-                            <option value="Peaches">Peaches</option>
-                        </select>
-                        <input type="number" placeholder="Qty (In Pounds)" id="create-appointment-description">
+                        <input type="text" name="food-item" placeholder="Enter Your Donation Item" id="food-item">
+                        <input type="number" placeholder="Qty (In Pounds)" id="food-quantity">
                     </div>
-                </div>
-                <button id="add-food-item">Add More Items</button>
+                    <button id="add-food-item">Add More Items</button>
+                    
                 <button id="test-food-api">test api</button>
             </div>
             <div>---</div>

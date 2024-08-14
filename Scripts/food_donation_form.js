@@ -24,27 +24,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     addFoodItemBtn.addEventListener("click", (event) => {
         event.preventDefault();
+        
+        // Create a new div for the row
         let element = document.createElement("div");
-        element.classList.add("row")
-        element.innerHTML = `<select name="food-options" id="">
-                            <option value="n/a">Select Your Donation</option>
-                            <option value="Potato">Potato</option>
-                            <option value="Tomato">Tomato</option>
-                            <option value="Onion">Onion</option>
-                            <option value="Cucumber">Cucumber</option>
-                            <option value="Pumpkin">Pumpkin</option>
-                            <option value="Apples">Apples</option>
-                            <option value="Oranges">Oranges</option>
-                            <option value="Bananas">Bananas</option>
-                            <option value="Peaches">Peaches</option>
-                        </select>
-                        <!-- <input type="" placeholder="Description" id="create-appointment-description"> -->
-                        <input type="number" placeholder="Qty (In Pounds)" id="create-appointment-description">`
-        console.log(element)
-        donationsContainer.appendChild(element)
-        // extractItems();
-        // clearForm(donationsContainer)
-    })
+        element.classList.add("row");
+    
+        // Create the text input for the food item
+        const foodItemInput = document.createElement("input");
+        foodItemInput.type = "text";
+        foodItemInput.name = "food-item";
+        foodItemInput.placeholder = "Enter Your Donation Item";
+        foodItemInput.classList.add("food-item-input");
+    
+        // Create the number input for the quantity
+        const quantityInput = document.createElement("input");
+        quantityInput.type = "number";
+        quantityInput.placeholder = "Qty (In Pounds)";
+        quantityInput.classList.add("food-quantity-input");
+    
+        // Append the inputs to the new row div
+        element.appendChild(foodItemInput);
+        element.appendChild(quantityInput);
+    
+        // Append the new row above the "Add More Items" button
+        donationsContainer.insertBefore(element, addFoodItemBtn);
+    });
+    
 
     testApiBtn.addEventListener("click", (event) => {
 
