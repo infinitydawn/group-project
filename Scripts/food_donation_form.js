@@ -5,8 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let createAppointmentBtn = document.querySelector(".create-appointment-btn");
     let addFoodItemBtn = document.querySelector("#add-food-item");
     let testApiBtn = document.querySelector("#test-food-api");
+    let donateButton = document.querySelector("#donate-button");
+    let dateField = document.querySelector("#create-appointment-date");
     let donationsContainer = document.querySelector(".donations");
-
 
     createAppointmentBtn.addEventListener("click", (event) => {
         event.preventDefault();
@@ -14,42 +15,48 @@ document.addEventListener("DOMContentLoaded", () => {
         let date = document.querySelector("#create-appointment-date").value;
         let description = document.querySelector("#create-appointment-description").value;
 
-        //this function create a new appointments in the database
-        createAppointment(username, date, description)
+        // This function creates new appointments in the database
+        createAppointment(username, date, description);
 
-        document.querySelector("#create-appointment-user").value = ""
-        document.querySelector("#create-appointment-date").value = ""
-        document.querySelector("#create-appointment-description").value = ""
-    })
+        document.querySelector("#create-appointment-user").value = "";
+        document.querySelector("#create-appointment-date").value = "";
+        document.querySelector("#create-appointment-description").value = "";
+    });
 
     addFoodItemBtn.addEventListener("click", (event) => {
         event.preventDefault();
-        
+
         // Create a new div for the row
         let element = document.createElement("div");
         element.classList.add("row");
-    
+
         // Create the text input for the food item
         const foodItemInput = document.createElement("input");
         foodItemInput.type = "text";
         foodItemInput.name = "food-item";
         foodItemInput.placeholder = "Enter Your Donation Item";
         foodItemInput.classList.add("food-item-input");
-    
+
         // Create the number input for the quantity
         const quantityInput = document.createElement("input");
         quantityInput.type = "number";
         quantityInput.placeholder = "Qty (In Pounds)";
         quantityInput.classList.add("food-quantity-input");
-    
+
         // Append the inputs to the new row div
         element.appendChild(foodItemInput);
         element.appendChild(quantityInput);
-    
-        // Append the new row above the "Add More Items" button
-        donationsContainer.insertBefore(element, addFoodItemBtn);
+
+        // Append the new row to the donations container
+        donationsContainer.appendChild(element);
     });
-    
+
+    donateButton.addEventListener("click", () => {
+        // Show the date field when the donate button is clicked
+        dateField.style.display = 'block';
+    });
+
+
 
     testApiBtn.addEventListener("click", (event) => {
 

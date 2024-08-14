@@ -2,6 +2,20 @@
     box-sizing: border-box;
 }
 
+/* Hide the appointment date field initially */
+#create-appointment-date {
+    display: none;
+}
+
+/* Ensure each row of inputs is styled properly */
+.row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+
+
 body {
     font-family: "Poppins", sans-serif;
     margin: 0;
