@@ -5,26 +5,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const customAmountInput = document.querySelector("#custom-amount");
     const donateButton = document.querySelector("#donate-btn");
     const cardDetailsSection = document.querySelector("#card-details-section");
+    const submitButton = document.querySelector("#submit-btn");
 
-    // Handle predefined donation options
     donationOptions.forEach(button => {
         button.addEventListener("click", (event) => {
             donationOptions.forEach(btn => btn.classList.remove("selected"));
             event.target.classList.add("selected");
 
-            // If "Other" is selected, show the custom input field
             if (event.target === otherOption) {
                 customAmountContainer.style.display = "block";
-                customAmountInput.focus(); // Focus on the custom input field
+                customAmountInput.focus(); 
             } else {
                 customAmountContainer.style.display = "none";
-                customAmountInput.value = ""; // Clear the custom input field
+                customAmountInput.value = ""; 
             }
         });
     });
 
-    // Show the card details section when "Donate" is clicked
-    donateButton.addEventListener("click", () => {
-        cardDetailsSection.style.display = "block";
+    donateButton.addEventListener("click", (event) => {
+        event.preventDefault(); 
+        cardDetailsSection.style.display = "block"; 
+    });
+
+    submitButton.addEventListener("click", () => {
+        // it will go to thank_you.html after sumbit the donation
+        window.location.href = "thank_you.html";
     });
 });
