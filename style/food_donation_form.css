@@ -2,10 +2,6 @@
     box-sizing: border-box;
 }
 
-/* Hide the appointment date field initially */
-#create-appointment-date {
-    display: none;
-}
 
 /* Ensure each row of inputs is styled properly */
 .row {

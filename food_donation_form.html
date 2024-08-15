@@ -15,7 +15,8 @@
             <ul>
                 <li><a href="home.html" title="welcome to TableToTable">Home</a></li>
                 <li><a href="money_donation_form.html" title="Support Our Mission with a Donation">Donate Money</a></li>
-                <li><a href="food_donation_form.html" title="Share your surplus, Feed the Community">Donate Food</a></li>
+                <li><a href="food_donation_form.html" title="Share your surplus, Feed the Community">Donate Food</a>
+                </li>
                 <li><a href="events.html" title="Manage Your Appointments">Your Appointments</a></li>
                 <li><a href="login.html" title="Access Your Account">Login/Signup</a></li>
                 <li><a href="inventory.html" title="Track Our Food Inventory">Inventory</a></li>
@@ -26,11 +27,11 @@
 
         <section>
             <h2>Donate Food</h2>
-            <p>We appreciate any efforts to not let good food go to waste, donate it for a good purpose below. </p>
+            <p>We appreciate any efforts to not let good food go to waste, donate it for a good purpose below.</p>
             <div>
                 <input type="text" placeholder="username" id="create-appointment-user">
                 <input type="text" placeholder="Description" id="create-appointment-description">
-                <input type="datetime-local" placeholder="" id="create-appointment-date">
+                <input type="datetime-local" id="create-appointment-date">
                 <button class="create-appointment-btn">Create An Appointment</button>
                 <div class="donations">
                     <div class="row">
@@ -46,16 +47,15 @@
                             <option value="Bananas">Bananas</option>
                             <option value="Peaches">Peaches</option>
                         </select>
-                        <input type="number" placeholder="Qty (In Pounds)" id="create-appointment-description">
+                        <input type="number" placeholder="Qty (In Pounds)" id="create-appointment-qty">
                     </div>
                 </div>
                 <button id="add-food-item">Add More Items</button>
-                <!-- <button id="test-food-api">Test API</button> -->
-                <!-- <button id="donate-button">Donate</button> -->
-                <!-- <button id="test-food-api">test api</button> -->
                 <div>---</div>
-            <hr>
+                <hr>
+            </div> <!-- This closing div is moved up here to correctly close the div element -->
         </section>
+        
         </div>
     </main>
     <footer>
