@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const otherOption = document.querySelector("#other-option");
     const customAmountContainer = document.querySelector("#custom-amount-container");
     const customAmountInput = document.querySelector("#custom-amount");
+    const donateButton = document.querySelector("#donate-btn");
+    const cardDetailsSection = document.querySelector("#card-details-section");
 
     // Handle predefined donation options
     donationOptions.forEach(button => {
@@ -19,5 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 customAmountInput.value = ""; // Clear the custom input field
             }
         });
+    });
+
+    // Show the card details section when "Donate" is clicked
+    donateButton.addEventListener("click", () => {
+        cardDetailsSection.style.display = "block";
     });
 });
