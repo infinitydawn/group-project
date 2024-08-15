@@ -118,3 +118,34 @@ main {
 .input-box input[type="button"]:hover {
     background: #004d40; 
 }
+
+/* Container for donation amount options */
+.donation-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 1em;
+}
+
+/* Style the donation buttons */
+.donation-option {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.donation-option:hover {
+    background-color: #004d40;
+}
+
+/* Custom input field for the "Other" option */
+#custom-amount {
+    width: 100px;
+    padding: 10px;
+    margin-left: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
