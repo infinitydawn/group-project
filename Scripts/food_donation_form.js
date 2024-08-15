@@ -4,7 +4,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     let createAppointmentBtn = document.querySelector(".create-appointment-btn");
     let addFoodItemBtn = document.querySelector("#add-food-item");
-    let testApiBtn = document.querySelector("#test-food-api");
+    // let testApiBtn = document.querySelector("#test-food-api");
     let donateButton = document.querySelector("#donate-button");
     let dateField = document.querySelector("#create-appointment-date");
     let donationsContainer = document.querySelector(".donations");
@@ -47,14 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
         // clearForm(donationsContainer)
     })
 
-    testApiBtn.addEventListener("click", (event) => {
+    // testApiBtn.addEventListener("click", (event) => {
 
-        console.log(extractItems())
+    //     console.log(extractItems())
 
-        let foodInfo = extractItems();
+    //     let foodInfo = extractItems();
 
-        createFoodItems(foodInfo,"123123123");
-    })
+    //     createFoodItems(foodInfo,"123123123");
+    // })
 
 });
 
