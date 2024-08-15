@@ -32,13 +32,13 @@
             </div>
             <form action="/donate-money-form" method="post">
                 <div class="input-box">
-                    <input type="text" placeholder="Enter your first name">
+                    <input type="text" placeholder="Enter your first name" required>
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Enter your last name">
+                    <input type="text" placeholder="Enter your last name" required>
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Enter your email">
+                    <input type="text" placeholder="Enter your email" required>
                 </div>
                 <div class="donation-buttons">
                     <button type="button" class="donation-option" data-amount="5">$5</button>
@@ -56,6 +56,8 @@
             </form>
         </div>
     </main>
+    <p>Thank you for your donation! Your contribution will help feed communities in need.</p>
+
     <script src="Scripts/donate.js"></script>
     <footer>
         <p>&copy; 2024 Event Booking App</p>
