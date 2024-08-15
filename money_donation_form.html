@@ -41,17 +41,22 @@
                     <input type="text" placeholder="Enter your email">
                 </div>
                 <div class="donation-buttons">
-                    <button type="button" class="donation-option">$5</button>
-                    <button type="button" class="donation-option">$10</button>
-                    <button type="button" class="donation-option">$20</button>
-                    <button type="button" class="donation-option">$50</button>
+                    <button type="button" class="donation-option" data-amount="5">$5</button>
+                    <button type="button" class="donation-option" data-amount="10">$10</button>
+                    <button type="button" class="donation-option" data-amount="20">$20</button>
+                    <button type="button" class="donation-option" data-amount="50">$50</button>
+                    <button type="button" class="donation-option" id="other-option">Other</button>
                 </div>
+                <div id="custom-amount-container" style="display: none;">
+                    <input type="number" id="custom-amount" placeholder="Enter custom amount">
+                </div>                
                 <div class="input-box">
                     <input type="button" value="Donate">
                 </div>
             </form>
         </div>
     </main>
+    <script src="Scripts/donate.js"></script>
     <footer>
         <p>&copy; 2024 Event Booking App</p>
     </footer>

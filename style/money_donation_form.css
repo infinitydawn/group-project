@@ -137,15 +137,20 @@ main {
     transition: background 0.3s ease;
 }
 
-.donation-option:hover {
-    background-color: #004d40;
+.donation-option:hover,
+.donation-option:focus {
+  background-color: #00362d; /* Darker green */
 }
 
-/* Custom input field for the "Other" option */
-#custom-amount {
-    width: 100px;
-    padding: 10px;
-    margin-left: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
+.donation-option:active {
+  background-color: #00362d; /* Even darker green */
 }
+
+.donation-option.selected {
+  background-color: #00362d; /* Match the hover/focus state */
+}
+/* #00362d
+
+
+
+
