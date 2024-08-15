@@ -16,6 +16,7 @@ Anthony ~ Team Member
 
 ## Project Description
 
+
 Our project focuses on creating a platform where restaurants can easily donate their excess food, and food pantries and soup kitchens can receive these donations. The platform will streamline the process of food donation, making it efficient and effective for all parties involved.
 
 ## Features
